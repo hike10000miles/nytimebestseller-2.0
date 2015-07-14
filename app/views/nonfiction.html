@@ -1,0 +1,12 @@
+<p>This is the nonfiction view.</p>
+<h2 class="list_title">{{booklist1.results.display_name}}</h2>
+<input class="search" type="text" ng-model="nameFilter" placeholder="Search..."/>
+<div id="book" ng-repeat="book in booklist1.results.books | filter: nameFilter">
+  <p>Rank this week {{book.rank}}</p>
+  <p>{{book.title}}</p>
+  <p>{{book.author}}</p>
+  <img class="image" ng-src="{{book.book_image}}">
+  <p class="amazon_link"><a href="{{book.amazon_product_url}}">Amazon Link</a></p>
+  <p class="review_link" ng-show="book.book_review_link"><a href="{{book.book_review_link}}">Book Review</a></p>
+</div>
+<h4 class="copyright">{{booklist1.copyright}}</h4>
