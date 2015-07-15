@@ -46,17 +46,17 @@ body {
   height: auto;
   text-align: center;
   background-color: #10222B;
-  @include outer-container;
   li {
-    margin-top: 20px;
-    width: 15%;
-    margin-right: 5%;
+    margin-bottom: 10px;
+    width: 100%;
     text-align: center;
-    float: left;
     a {
       text-decoration: none;
       font-family: 'Open Sans', sans-serif;
       color: #F6FFE0;
+    }
+    a:hover {
+      color: blue;
     }
   }
 }
@@ -64,16 +64,39 @@ body {
   @include outer-container;
   background-color: #BDD684;
   #book {
-    margin-top: 20px;
     height: 500px;
-    @include span-columns(4);
-    margin-right: 1.5%;
+    margin-top: 20px;
     text-align: center;
     font-family: 'Coming Soon', cursive;
     .image {
       width: 60%;
       height: 60%;
     }
+  }
+}
+@media screen and (max-width: 400px) {
+  #book {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 400px) {
+  .menu {
+    background-color: #10222B;
+    li {
+      width: 15%;
+      margin-right: 1.5%;
+      display: inline-block;
+    }
+  }
+  #book {
+    @include span-columns(6);
+    margin-right: 1%;
+  }
+}
+@media screen and (min-width: 600px) {
+  #book {
+    @include span-columns(4);
+    margin-right: 1.5%;
   }
 }
 .copyright {
@@ -93,7 +116,6 @@ body {
     font-family: 'Coming Soon', cursive;
   }
 }
-
 
 
 
@@ -162,8 +184,9 @@ body {
 }
 .list2 {
   @include span-columns(5);
+  margin-left: 20px;
   background-color: #95AB63;
   font-family: 'Coming Soon', cursive;
-  margin: 0;
+  margin-right: 0;
   float: left;
 }
