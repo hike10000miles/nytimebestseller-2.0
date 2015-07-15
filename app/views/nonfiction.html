@@ -1,33 +1,40 @@
-<h2 class="list_title">{{booklist1.results.display_name}}</h2>
-<div class="searchBar">
-  <span class="bar">
-    Search books by titles and authors' names:
-    <input class="search" type="text" ng-model="nameFilter" placeholder="Search..."/>
-  </span>
-</div>
-<div id="book" ng-repeat="book in booklist1.results.books | filter: nameFilter">
-  <p>Rank this week {{book.rank}}</p>
-  <p>{{book.title}}</p>
-  <p>{{book.author}}</p>
-  <img class="image" ng-src="{{book.book_image}}">
-  <p class="amazon_link"><a href="{{book.amazon_product_url}}">Amazon Link</a></p>
-  <p class="review_link" ng-show="book.book_review_link"><a href="{{book.book_review_link}}">Book Review</a></p>
-</div>
-<div class="mylist">
-  <form class="listform" role="form" ng-submit="addBook()">
-    <div>
-      <input type="text" ng-model="toread" placeholder="Which book do you want?">
-      <span>
-        <input class="btn" type="submit" value="Add">
-      </span>
-    </div>
-  </form>
-  <p>The list of book you want!</p>
-  <p class="list" ng-repeat="wantbook in wantbooks">
-    <input type="text" ng-model="wantbook">
-    <span>
-      <button class="btn btn-danger" ng-click="removeWantbook($index)" aria-label="Remove">X</button>
+<section class="mainList">
+  <h2 class="list_title">{{booklist1.results.display_name}}</h2>
+  <div class="searchBar">
+    <span class="bar">
+      Search books by titles and authors' names:
+      <input class="search" type="text" ng-model="nameFilter" placeholder="Search..."/>
     </span>
-  </p>
-</div>
+  </div>
+  <div id="book" ng-repeat="book in booklist1.results.books | filter: nameFilter">
+    <p>{{book.rank}}</p>
+    <p>{{book.title}}</p>
+    <p>{{book.author}}</p>
+    <img class="image" ng-src="{{book.book_image}}">
+    <p class="amazon_link"><a href="{{book.amazon_product_url}}">Amazon Link</a></p>
+    <p class="review_link" ng-show="book.book_review_link"><a href="{{book.book_review_link}}">Book Review</a></p>
+  </div>
+</section>
+<section class="viewerList">
+  <div class="list2" ng-repeat="book in booklist1.results.books">
+    <p>{{book.rank}}, {{book.title}}, {{book.author}}</p>
+  </div>
+  <div class="mylist">
+    <form class="listform" role="form" ng-submit="addBook()">
+      <div>
+        <input type="text" ng-model="toread" placeholder="Which book do you want?">
+        <span>
+          <input class="btn" type="submit" value="Add">
+        </span>
+      </div>
+    </form>
+    <p>The list of book you want!</p>
+    <p class="list" ng-repeat="wantbook in wantbooks">
+      <input type="text" ng-model="wantbook">
+      <span>
+        <button class="btn btn-danger" ng-click="removeWantbook($index)" aria-label="Remove">X</button>
+      </span>
+    </p>
+  </div>
+</section>
 <h4 class="copyright">{{booklist1.copyright}}</h4>
