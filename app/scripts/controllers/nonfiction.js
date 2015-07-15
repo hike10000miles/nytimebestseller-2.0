@@ -20,5 +20,4 @@ angular.module('bestbooksApp')
     $scope.removeWantbook = function (index) {
       $scope.wantbooks.splice(index, 1);
     };
-    
 }]);

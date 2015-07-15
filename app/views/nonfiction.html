@@ -1,5 +1,10 @@
 <h2 class="list_title">{{booklist1.results.display_name}}</h2>
-<input class="search" type="text" ng-model="nameFilter" placeholder="Search..."/>
+<div class="searchBar">
+  <span class="bar">
+    Search books by titles and authors' names:
+    <input class="search" type="text" ng-model="nameFilter" placeholder="Search..."/>
+  </span>
+</div>
 <div id="book" ng-repeat="book in booklist1.results.books | filter: nameFilter">
   <p>Rank this week {{book.rank}}</p>
   <p>{{book.title}}</p>
@@ -9,14 +14,12 @@
   <p class="review_link" ng-show="book.book_review_link"><a href="{{book.book_review_link}}">Book Review</a></p>
 </div>
 <div class="mylist">
-  <form role="form" ng-submit="addBook()">
+  <form class="listform" role="form" ng-submit="addBook()">
     <div>
-      <div>
-        <input type="text" ng-model="toread" placeholder="Which book do you want?">
-        <span>
-          <input class="btn" type="submit" value="Add">
-        </span>
-      </div>
+      <input type="text" ng-model="toread" placeholder="Which book do you want?">
+      <span>
+        <input class="btn" type="submit" value="Add">
+      </span>
     </div>
   </form>
   <p>The list of book you want!</p>
