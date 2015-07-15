@@ -12,4 +12,13 @@ angular.module('bestbooksApp')
     $http.get('resources/nytimeBestsellerCulture20150706.json').success(function(data) {
       $scope.booklist3 = data;
     });
+    $scope.wantbooks = ['Book Title'];
+    $scope.addBook = function () {
+      $scope.wantbooks.push($scope.toread);
+      $scope.toread = '';
+    };
+    $scope.removeWantbook = function (index) {
+      $scope.wantbooks.splice(index, 1);
+    };
+
 }]);

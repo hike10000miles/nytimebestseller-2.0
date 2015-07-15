@@ -9,5 +9,23 @@
   <p class="amazon_link"><a href="{{book.amazon_product_url}}">Amazon Link</a></p>
   <p class="review_link" ng-show="book.book_review_link"><a href="{{book.book_review_link}}">Book Review</a></p>
 </div>
-<h4>{{booklist2.copyright}}</h4>
+<div class="mylist">
+  <form role="form" ng-submit="addBook()">
+    <div>
+      <div>
+        <input type="text" ng-model="toread" placeholder="Which book do you want?">
+        <span>
+          <input class="btn" type="submit" value="Add">
+        </span>
+      </div>
+    </div>
+  </form>
+  <p class="list" ng-repeat="wantbook in wantbooks">
+  	Your most wanted book<br/>
+    <input type="text" ng-model="wantbook">
+    <span>
+      <button class="btn btn-danger" ng-click="removeWantbook($index)" aria-label="Remove">X</button>
+    </span>
+  </p>
+</div>
 <h4 class="copyright">{{booklist2.copyright}}</h4>
