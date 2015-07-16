@@ -50,6 +50,8 @@ body {
     margin-bottom: 10px;
     width: 100%;
     text-align: center;
+    border-bottom: 2px solid #E2F0D6;
+
     a {
       text-decoration: none;
       font-family: 'Open Sans', sans-serif;
@@ -74,10 +76,16 @@ body {
     }
   }
 }
+.mylist {
+  clear: both;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
 @media screen and (max-width: 400px) {
   #book {
     width: 100%;
   }
+
 }
 @media screen and (min-width: 400px) {
   .menu {
@@ -86,17 +94,34 @@ body {
       width: 15%;
       margin-right: 1.5%;
       display: inline-block;
+      border: none;
     }
   }
   #book {
     @include span-columns(6);
     margin-right: 1%;
   }
+  .mylist {
+    .listform {
+      margin-left: 20%;
+    }
+    p {
+      margin-left: 20%;
+    }
+  }
 }
 @media screen and (min-width: 600px) {
   #book {
     @include span-columns(4);
     margin-right: 1.5%;
+  }
+  .mylist {
+    .listform {
+      margin-left: 40%;
+    }
+    p {
+      margin-left: 40%;
+    }
   }
 }
 .copyright {
@@ -155,9 +180,6 @@ body {
     text-decoration: none;
   }
 }
-.mylist {
-  clear: both;
-}
 .copyright {
   font-family: 'Open Sans', sans-serif;
 }
@@ -169,16 +191,6 @@ body {
 .viewerList {
   background-color: #95AB63;
 }
-.mylist {
-  width: 100%;
-  .listform {
-    margin-left: 40%;
-  }
-  p {
-    margin-left: 40%;
-    font-family: 'Open Sans', sans-serif;
-  }
-}
 .amazon_link {
   margin-top: 5px;
 }
@@ -189,4 +201,11 @@ body {
   font-family: 'Coming Soon', cursive;
   margin-right: 0;
   float: left;
+}
+.listTitle {
+  text-align: center;
+  clear: both;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
